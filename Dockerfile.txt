@@ -1,0 +1,11 @@
+# Use the official Nginx image from the Docker Hub
+FROM nginx:stable-alpine3.17-slim
+
+# Copy the local index.html to the container's Nginx HTML directory
+COPY index.html /usr/share/nginx/html
+
+# Expose port 80 to the outside world
+EXPOSE 80
+
+# Run Nginx in the foreground
+CMD ["nginx", "-g", "daemon off;"]
